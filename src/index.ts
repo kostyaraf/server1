@@ -3,15 +3,32 @@ import express, {Request, Response} from 'express'
 const app = express()
 const port = 3000
 
+let videos = [
+  {id: 1, title: 'Video 1', author: 'Kostya'},
+  {id: 2, title: 'Video 2', author: 'Kostya'},
+  {id: 3, title: 'Video 3', author: 'Kostya'},
+]
+
 app.get('/', (req: Request, res: Response) => {
-    // console.log('req', req.)
-    const message = 'Hello world!'
-    res.send(message)
+  res.send('home')
+})
+app.get('/videos', (req: Request, res: Response) => {
+  res.send('videos')
+})
+app.post('/videos', (req: Request, res: Response) => {
+  res.send('videos')
+})
+app.put('/videos/:videoId', (req: Request, res: Response) => {
+  res.send('videos')
+})
+app.get('/videos/:videoId', (req: Request, res: Response) => {
+  res.send('videos')
+})
+app.delete('/videos/:videoId', (req: Request, res: Response) => {
+  res.send('videos')
 })
 
-app.get('/test', (req: Request, res: Response) => {
-    res.send('Hello Test 2!')
-})
+
 
 app.listen(port, () => {
     console.log(`Example app listening port ${port}`)
